@@ -20,13 +20,16 @@ let playround = function (playerSelection, computerSelection) {
     result = 'It\'s a Draw';
   } else {
     if (playerS == 'rock' && computerS == 'scissors' || playerS == 'paper' && computerS == 'rock' || playerS == 'scissors' && computerS == 'paper') {
-      result = 'You Win!';
+      result = 'You Win! ' + playerS + ' beats ' + computerS;
     }
     else {
-      result = 'You Lose!';
+      result = 'You Lose! ' + computerS + ' beats ' + playerS;
     }
   }
 
   return result;
 };
+
+
+
 
