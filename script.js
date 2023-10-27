@@ -30,19 +30,49 @@ let playround = function (playerSelection, computerSelection) {
   return result;
 };
 
+let setScore = (string) => {
+  if (string.includes('Win')) {
+    playerScore++;
+  } else if (string.includes('Lose')) {
+    computerScore++;
+  }
+};
+
+let checkWinner = () => {
+  if (playerScore >= 5) {
+    return 'HURRAY!! YOU WON THE GAME!';
+  } else if (computerScore >= 5) {
+    return 'YOU LOST! BETTER LUCK NEXT TIME!';
+  } return '';
+};
+
 const rock = document.getElementById('rock');
 const paper = document.getElementById('paper');
 const scissors = document.getElementById('scissors');
 const gResult = document.getElementById('gResult');
+const scores = document.getElementById('scores');
+const round = document.getElementById('round');
+let playerScore = 0;
+let computerScore = 0;
 
 rock.addEventListener('click', () => {
   gResult.innerText = playround('rock', getComputerChoice());
+  setScore(gResult.innerText);
+  scores.innerText = `playerScore ${playerScore} computerScore ${computerScore}`
+  round.innerText = checkWinner();
 });
 
 paper.addEventListener('click', () => {
   gResult.innerText = playround('paper', getComputerChoice());
+  setScore(gResult.innerText);
+  scores.innerText = `playerScore ${playerScore} computerScore ${computerScore}`
+  round.innerText = checkWinner();
 });
 
 scissors.addEventListener('click', () => {
   gResult.innerText = playround('scissors', getComputerChoice());
-});
+  setScore(gResult.innerText);
+  scores.innerText = `playerScore ${playerScore} computerScore ${computerScore}`
+  round.innerText = checkWinner();
+  });
+
