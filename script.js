@@ -30,28 +30,19 @@ let playround = function (playerSelection, computerSelection) {
   return result;
 };
 
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
+const gResult = document.getElementById('gResult');
 
-let game = function() {
-  let wins = 0;
-  let loss = 0;
-  for (let i = 0; i < 5; ++i) {
-    let userChoice = window.prompt('Rock Paper Scissors?');
-    let result = playround(userChoice, getComputerChoice());
-    window.alert(result);
-    if (result.includes('Win')) {
-      wins += 1;
-    } else {
-      loss += 1;
-    }
-  }
+rock.addEventListener('click', () => {
+  gResult.innerText = playround('rock', getComputerChoice());
+});
 
-  if (wins > loss) {
-    return 'You Won! the game';
-  } else if (wins < loss) {
-    return 'You Lost! the game';
-  } else {
-    return 'Its a Draw!';
-  }
-};
+paper.addEventListener('click', () => {
+  gResult.innerText = playround('paper', getComputerChoice());
+});
 
-window.alert(game());
+scissors.addEventListener('click', () => {
+  gResult.innerText = playround('scissors', getComputerChoice());
+});
