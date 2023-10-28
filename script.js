@@ -62,21 +62,21 @@ let computerScore = 0;
 rock.addEventListener('click', () => {
   gResult.innerText = playround('rock', getComputerChoice());
   setScore(gResult.innerText);
-  scores.innerText = `playerScore ${playerScore} computerScore ${computerScore}`
+  scores.innerText = `playerScore ${playerScore} || computerScore ${computerScore}`
   round.innerText = checkWinner();
 });
 
 paper.addEventListener('click', () => {
   gResult.innerText = playround('paper', getComputerChoice());
   setScore(gResult.innerText);
-  scores.innerText = `playerScore ${playerScore} computerScore ${computerScore}`
+  scores.innerText = `playerScore ${playerScore} || computerScore ${computerScore}`
   round.innerText = checkWinner();
 });
 
 scissors.addEventListener('click', () => {
   gResult.innerText = playround('scissors', getComputerChoice());
   setScore(gResult.innerText);
-  scores.innerText = `playerScore ${playerScore} computerScore ${computerScore}`
+  scores.innerText = `playerScore ${playerScore} || computerScore ${computerScore}`
   round.innerText = checkWinner();
   });
 
