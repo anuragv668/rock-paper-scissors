@@ -1,0 +1,17 @@
+body {
+  background-color: #8f00ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 650px;
+}
+.container {
+  border-radius: 20px;
+  width: 450px;
+  height: 250px;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
