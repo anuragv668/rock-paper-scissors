@@ -40,8 +40,12 @@ let setScore = (string) => {
 
 let checkWinner = () => {
   if (playerScore >= 5) {
+    playerScore = 0;
+    computerScore = 0;
     return 'HURRAY!! YOU WON THE GAME!';
   } else if (computerScore >= 5) {
+    playerScore = 0;
+    computerScore = 0;
     return 'YOU LOST! BETTER LUCK NEXT TIME!';
   } return '';
 };
